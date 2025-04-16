@@ -4,28 +4,26 @@ import "jquery/dist/jquery.min.js";
 import "./scss/main.scss";
 import "./js/main.js";
 
-window.addEventListener("DOMContentLoaded", () => {
+$(document).ready(function () {
     let scrollPos = 0;
-    const mainNav = document.getElementById("mainNav");
-    const headerHeight = mainNav.clientHeight;
-    window.addEventListener("scroll", function () {
-        const currentTop = document.body.getBoundingClientRect().top * -1;
+    const $mainNav = $("#mainNav");
+    const headerHeight = $mainNav.outerHeight();
+
+    $(window).on("scroll", function () {
+        const currentTop = $(document).scrollTop();
+
         if (currentTop < scrollPos) {
             // Scrolling Up
-            if (currentTop > 0 && mainNav.classList.contains("is-fixed")) {
-                mainNav.classList.add("is-visible");
+            if (currentTop > 0 && $mainNav.hasClass("is-fixed")) {
+                $mainNav.addClass("is-visible");
             } else {
-                console.log(123);
-                mainNav.classList.remove("is-visible", "is-fixed");
+                $mainNav.removeClass("is-visible is-fixed");
             }
         } else {
             // Scrolling Down
-            mainNav.classList.remove(["is-visible"]);
-            if (
-                currentTop > headerHeight &&
-                !mainNav.classList.contains("is-fixed")
-            ) {
-                mainNav.classList.add("is-fixed");
+            $mainNav.removeClass("is-visible");
+            if (currentTop > headerHeight && !$mainNav.hasClass("is-fixed")) {
+                $mainNav.addClass("is-fixed");
             }
         }
         scrollPos = currentTop;
