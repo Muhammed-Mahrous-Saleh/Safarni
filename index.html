@@ -13,6 +13,12 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
         <!-- <link rel="stylesheet" href="dist/main.css" /> -->
     </head>
     <body>
@@ -48,10 +54,7 @@
             <div class="container text-center">
                 <h2 class="display-4 mb-4 section--header">خدماتنا</h2>
                 <div class="row mx-auto justify-content-center">
-                    <div
-                        class="card mb-3 services_card"
-                        style="max-width: 540px"
-                    >
+                    <div class="card mb-3 services_card">
                         <div class="row g-0">
                             <div class="col-md-4 services_card--icon-container">
                                 <i class="fa-solid fa-hotel"></i>
@@ -68,10 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="card mb-3 services_card"
-                        style="max-width: 540px"
-                    >
+                    <div class="card mb-3 services_card">
                         <div class="row g-0">
                             <div class="col-md-4 services_card--icon-container">
                                 <i class="fa-solid fa-car"></i>
@@ -89,10 +89,7 @@
                     </div>
                 </div>
                 <div class="row mx-auto justify-content-center">
-                    <div
-                        class="card mb-3 services_card"
-                        style="max-width: 540px"
-                    >
+                    <div class="card mb-3 services_card">
                         <div class="row g-0">
                             <div class="col-md-4 services_card--icon-container">
                                 <i class="fa-solid fa-binoculars"></i>
@@ -110,10 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="card mb-3 services_card"
-                        style="max-width: 540px"
-                    >
+                    <div class="card mb-3 services_card">
                         <div class="row g-0">
                             <div class="col-md-4 services_card--icon-container">
                                 <i class="fa-solid fa-suitcase-rolling"></i>
@@ -132,6 +126,87 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="trips py-5" id="trips">
+            <div class="container text-center">
+                <h2 class="display-4 mb-4 section--header">الرحلات</h2>
+                <div
+                    class="row flex-wrap mx-auto justify-content-center gap-3 justify-content-evenly trip"
+                >
+                    <div class="card col col-md-4 trip_card">
+                        <img
+                            src="./src/images/trip1-1.jpg"
+                            class="card-img-top trip_card--image"
+                            alt="sphinx image"
+                        />
+                        <div class="card-body trip_card--body">
+                            <div class="trip_card-text">
+                                <div class="trip_card-text--name-container">
+                                    <h5 class="trip_card-text--name">
+                                        رحلة إلى الأهرامات في مصر
+                                    </h5>
+                                </div>
+                                <div class="trip_card-text--price-container">
+                                    <p class="trip_card-text--price">
+                                        <span>$</span>15
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="trip1.html" class="btn btn-primary"
+                                >تفاصيل الرحلة</a
+                            >
+                        </div>
+                    </div>
+                    <div class="card col col-md-4 trip_card">
+                        <img
+                            src="./src/images/trip2-1.jpg"
+                            class="card-img-top trip_card--image"
+                            alt="aya sofia image"
+                        />
+                        <div class="card-body trip_card--body">
+                            <div class="trip_card-text">
+                                <div class="trip_card-text--name-container">
+                                    <h5 class="trip_card-text--name">
+                                        رحلة إلى مدينة إسطنبول في تركيا
+                                    </h5>
+                                </div>
+                                <div class="trip_card-text--price-container">
+                                    <p class="trip_card-text--price">
+                                        <span>$</span>25
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="trip2.html" class="btn btn-primary"
+                                >تفاصيل الرحلة</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contactUs py-5" id="contactUs">
+            <div class="container text-center">
+                <h2 class="display-4 mb-4 section--header">تواصل معنا</h2>
+                <div class="row flex-column flex-md-row">
+                    <div class="col info">
+                        <div class="row info_row">
+                            <div>رقم الهاتف :</div>
+                            <div>966-12-3456789+</div>
+                        </div>
+                        <div class="row info_row">
+                            <div>البريد الألكتروني :</div>
+                            <div>support@safarni.com</div>
+                        </div>
+                        <div class="row info_row">
+                            <div>العنوان :</div>
+                            <div>المدينة المنورة, المملكة العربية السعودية</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="map" id="map"></div>
                     </div>
                 </div>
             </div>
