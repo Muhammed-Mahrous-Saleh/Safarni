@@ -216,6 +216,8 @@ header {
             justify-content: center;
             align-items: center;
             height: 100%;
+            color: $color-main;
+            font-size: 4rem;
         }
         &--text-container {
             display: flex;
@@ -223,6 +225,7 @@ header {
             align-items: center;
             text-align: start;
             height: 100%;
+            color: $color-main-dark;
         }
         &:hover {
             background-color: $color-gray-200;
