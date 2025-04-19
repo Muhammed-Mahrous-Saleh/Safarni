@@ -151,6 +151,52 @@ body {
     }
 }
 
+.login {
+    align-self: center;
+    &_btn {
+        background-color: $color-main;
+        border-color: $color-main;
+        font-size: 0.75rem;
+        &:focus,
+        &:focus-visible {
+            background-color: $color-main;
+            border-color: $color-main;
+            box-shadow: none;
+        }
+        &:active {
+            background-color: $color-main-dark !important;
+            border-color: $color-main-dark !important;
+            color: $color-main-light !important;
+        }
+        &:hover {
+            background-color: $color-main-light !important;
+            border-color: $color-main-light !important;
+            color: $color-main-dark !important;
+        }
+    }
+}
+
+.btn-custom {
+    background-color: $color-main;
+    border-color: $color-main;
+    &:focus,
+    &:focus-visible {
+        background-color: $color-main;
+        border-color: $color-main;
+        box-shadow: none;
+    }
+    &:active {
+        background-color: $color-main-dark !important;
+        border-color: $color-main-dark !important;
+        color: $color-main-light !important;
+    }
+    &:hover {
+        background-color: $color-main-light !important;
+        border-color: $color-main-light !important;
+        color: $color-main-dark !important;
+    }
+}
+
 header {
     background-image: url("../images/home-bg.jpg");
     background-size: cover;
