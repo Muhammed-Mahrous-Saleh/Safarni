@@ -18,44 +18,61 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
         >
-            القائمة
-            <i class="fas fa-bars"></i>
+            القائمة <i class="fas fa-bars"></i>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav me-auto py-4 py-lg-0">
+                <!-- static -->
                 <li class="nav-item">
                     <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html"
                         >الصفحة الرئيسية</a
                     >
                 </li>
-                <li class="nav-item">
+
+                <!-- displayed only in main page -->
+                <li class="nav-item main-only">
                     <a
                         class="nav-link px-lg-3 py-3 py-lg-4"
                         href="index.html#about"
-                        >عنا</a
+                        >عنّا</a
                     >
                 </li>
-                <li class="nav-item">
+                <li class="nav-item main-only">
                     <a
                         class="nav-link px-lg-3 py-3 py-lg-4"
                         href="index.html#services"
                         >خدماتنا</a
                     >
                 </li>
-                <li class="nav-item">
+                <li class="nav-item main-only">
                     <a
                         class="nav-link px-lg-3 py-3 py-lg-4"
                         href="index.html#trips"
                         >الرحلات</a
                     >
                 </li>
+
+                <!-- displayed only in trips pages -->
+                <li class="nav-item trip-only">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="#about-trip"
+                        >عن الرحلة</a
+                    >
+                </li>
+                <li class="nav-item trip-only">
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="#places"
+                        >المزارات</a
+                    >
+                </li>
+
+                <!-- static -->
                 <li class="nav-item">
-                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="#contactUs">
-                        تواصل معنا</a
+                    <a class="nav-link px-lg-3 py-3 py-lg-4" href="#contactUs"
+                        >تواصل معنا</a
                     >
                 </li>
                 <li class="nav-item login">
-                    <a class="btn login_btn" href="login.html"> تسجيل الدخول</a>
+                    <a class="btn login_btn" href="login.html">تسجيل الدخول</a>
                 </li>
             </ul>
         </div>

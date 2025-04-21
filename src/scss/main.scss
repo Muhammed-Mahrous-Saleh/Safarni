@@ -203,7 +203,14 @@ body {
 }
 
 header {
-    background-image: url("../images/home-bg.jpg");
+    &.main-page {
+        background-image: url("../images/home-bg.jpg");
+    }
+
+    &.trip1-page {
+        background-image: url("../images/trip1-1.jpg");
+    }
+
     background-size: cover;
     background-position: center;
     height: 100vh;
