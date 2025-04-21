@@ -11,7 +11,11 @@ const isProduction = process.env.NODE_ENV === "production";
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
-    entry: "./src/index.js",
+    entry: {
+        global: "./src/global.js",
+        index: "./src/index.js",
+        login: "./src/login.js",
+    },
     output: {
         path: path.resolve(__dirname, "dist"),
     },
@@ -22,6 +26,26 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "index.html",
+            filename: "index.html",
+            chunks: ["global", "index"],
+            // inject: "body",
+            // minify: {
+            //     removeComments: true,
+            //     collapseWhitespace: true,
+            //     removeRedundantAttributes: true,
+            //     useShortDoctype: true,
+            //     removeEmptyAttributes: true,
+            //     removeStyleLinkTypeAttributes: true,
+            //     keepClosingSlash: true,
+            //     minifyJS: true,
+            //     minifyCSS: true,
+            //     minifyURLs: true,
+            // },
+        }),
+        new HtmlWebpackPlugin({
+            template: "login.html",
+            filename: "login.html",
+            chunks: ["global", "login"],
         }),
 
         new HtmlWebpackPartialsPlugin({

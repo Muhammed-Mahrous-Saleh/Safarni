@@ -1,7 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
-import "jquery/dist/jquery.min.js";
-import "./scss/main.scss";
+// import "fontawesome/css/fontawesome.min.css";
 import "./js/main.js";
 
 $(document).ready(function () {
@@ -29,3 +26,13 @@ $(document).ready(function () {
         scrollPos = currentTop;
     });
 });
+
+const coordinates = [26.416691, 43.898653];
+
+const map = L.map("map").setView(coordinates, 15);
+
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap",
+}).addTo(map);
+
+L.marker(coordinates).addTo(map).bindPopup("سفرني للرحلات").openPopup();
