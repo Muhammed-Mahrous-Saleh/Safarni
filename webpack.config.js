@@ -15,6 +15,7 @@ const config = {
         global: "./src/global.js",
         index: "./src/index.js",
         login: "./src/login.js",
+        register: "./src/register.js",
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -46,6 +47,11 @@ const config = {
             template: "login.html",
             filename: "login.html",
             chunks: ["global", "login"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "register.html",
+            filename: "register.html",
+            chunks: ["global", "register"],
         }),
 
         new HtmlWebpackPartialsPlugin({

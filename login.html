@@ -32,7 +32,7 @@
                 <div id="formErrorContainer"></div>
 
                 <form id="loginForm" novalidate>
-                    <div class="loginForm_group">
+                    <div class="loginForm__group">
                         <div class="invalid-feedback"></div>
                         <input
                             type="email"
@@ -45,7 +45,7 @@
                         >
                     </div>
 
-                    <div class="loginForm_group">
+                    <div class="loginForm__group password-toggle-group">
                         <div class="invalid-feedback"></div>
                         <input
                             type="password"
@@ -58,6 +58,12 @@
                             class="form-label loginForm__label"
                             >كلمة المرور</label
                         >
+                        <button
+                            type="button"
+                            class="btn btn-sm border-0 bg-transparent position-absolute translate-middle-y toggle-input"
+                        >
+                            <i class="fas fa-eye-slash"></i>
+                        </button>
                     </div>
                     <div class="text-end mb-3">
                         <a

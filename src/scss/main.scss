@@ -388,6 +388,7 @@ header {
 // form page
 .loginForm {
     &__group {
+        position: relative;
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
@@ -448,6 +449,17 @@ header {
     }
 }
 
+.registerPage {
+    &__main {
+        min-height: calc(100vh - 80px);
+        margin-inline: auto;
+    }
+    &__form {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+
 .invalid-feedback {
     display: none;
     margin: 0 !important;
@@ -458,4 +470,9 @@ header {
 
 .invalid-feedback.show + .loginForm__input {
     margin-top: 0;
+}
+
+.toggle-input {
+    top: 20px;
+    left: 10px;
 }

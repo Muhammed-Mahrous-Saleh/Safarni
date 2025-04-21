@@ -1,6 +1,8 @@
 import $ from "jquery";
+import "./utils/togglePasswordPlugin.js";
 
 $(document).ready(function () {
+    $(".password-toggle-group").togglePasswordVisibility();
     $("#loginForm").on("submit", function (e) {
         e.preventDefault();
 
