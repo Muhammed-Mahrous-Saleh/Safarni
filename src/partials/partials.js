@@ -4,6 +4,24 @@ import L from "leaflet";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
+const navLinksByPage = {
+    main: [
+        { text: "الصفحة الرئيسية", href: "index.html" },
+        { text: "عنّا", href: "index.html#about" },
+        { text: "خدماتنا", href: "index.html#services" },
+        { text: "الرحلات", href: "index.html#trips" },
+        { text: "تواصل معنا", href: "#contactUs" },
+        { text: "تسجيل الدخول", href: "login.html", class: "btn login_btn" },
+    ],
+    trip: [
+        { text: "الصفحة الرئيسية", href: "index.html" },
+        { text: "عن الرحلة", href: "#about-trip" },
+        { text: "المزارات", href: "#places" },
+        { text: "تواصل معنا", href: "#contactUs" },
+        { text: "تسجيل الدخول", href: "login.html", class: "btn login_btn" },
+    ],
+};
+
 $(document).ready(() => {
     // navbar scrolling behavior
     let scrollPos = 0;
@@ -38,20 +56,32 @@ $(document).ready(() => {
     // navbar links visibility based on page type
     const path = window.location.pathname;
     const isTripPage = path.includes("trip");
-    const isMainPage =
-        path.endsWith("index.html") || path === "/" || path === "";
-
-    const mainOnlyLinks = $(".main-only");
-    const tripOnlyLinks = $(".trip-only");
-
-    if (isTripPage) {
-        mainOnlyLinks.hide();
-        tripOnlyLinks.show();
-    } else {
-        mainOnlyLinks.show();
-        tripOnlyLinks.hide();
-    }
+    generateNavLinks(isTripPage ? "trip" : "main");
 });
+
+function generateNavLinks(type) {
+    const navLinks = navLinksByPage[type] || [];
+    const $navContainer = $("#dynamicNav");
+    $navContainer.empty();
+
+    navLinks.forEach((link) => {
+        const $li = $("<li>").addClass("nav-item");
+        const $a = $("<a>")
+            .addClass("nav-link px-lg-3 py-3 py-lg-4")
+            .attr("href", link.href)
+            .text(link.text);
+
+        if (link.class) {
+            $a.removeClass("nav-link px-lg-3 py-3 py-lg-4").addClass(
+                link.class
+            );
+            $li.addClass("login");
+        }
+
+        $li.append($a);
+        $navContainer.append($li);
+    });
+}
 
 // leaflet icon fix
 delete L.Icon.Default.prototype._getIconUrl;
