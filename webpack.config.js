@@ -16,6 +16,7 @@ const config = {
         index: "./src/index.js",
         login: "./src/login.js",
         register: "./src/register.js",
+        trip: "./src/trip.js",
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -53,14 +54,26 @@ const config = {
             filename: "register.html",
             chunks: ["global", "register"],
         }),
+        new HtmlWebpackPlugin({
+            template: "trip1.html",
+            filename: "trip1.html",
+            chunks: ["global", "trip"],
+        }),
+        new HtmlWebpackPlugin({
+            template: "trip2.html",
+            filename: "trip2.html",
+            chunks: ["global", "trip"],
+        }),
 
         new HtmlWebpackPartialsPlugin({
             path: path.resolve(__dirname, "src/partials/navbar.html"),
+            template_filename: ["index.html", "trip1.html", "trip2.html"],
             location: "body",
             priority: "high",
         }),
         new HtmlWebpackPartialsPlugin({
             path: path.resolve(__dirname, "src/partials/footer.html"),
+            template_filename: ["index.html", "trip1.html", "trip2.html"],
             location: "body",
             priority: "low",
         }),
