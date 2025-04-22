@@ -519,6 +519,9 @@ footer {
 }
 
 .about-trip {
+    h2 {
+        margin-bottom: 2rem;
+    }
     &.trip1-page {
         h2 {
             color: $color-main;
