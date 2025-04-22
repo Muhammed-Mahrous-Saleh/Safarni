@@ -39,6 +39,7 @@ $(document).ready(function () {
         if (!password.val()) {
             password.addClass("is-invalid");
             password
+                .parent()
                 .siblings(".invalid-feedback")
                 .text("يرجى إدخال كلمة المرور")
                 .addClass("show")
@@ -50,17 +51,26 @@ $(document).ready(function () {
 
         if (!isValid) return;
 
-        const isLoginSuccessful = false;
+        const submitBtn = $("#loginForm button[type='submit']");
+        submitBtn
+            .prop("disabled", true)
+            .html(`<i class="fas fa-spinner fa-spin ms-2"></i>`);
 
-        if (!isLoginSuccessful) {
-            email.removeClass("is-valid");
-            password.removeClass("is-valid");
+        setTimeout(() => {
+            const isLoginSuccessful = false;
 
-            $("#loginForm").prepend(`
-        <div id="formError" class="alert alert-danger text-center">
-          البريد الإلكتروني أو كلمة المرور غير صحيحة
-        </div>
-      `);
-        }
+            submitBtn.prop("disabled", false).html("دخول");
+
+            if (!isLoginSuccessful) {
+                email.removeClass("is-valid");
+                password.removeClass("is-valid");
+
+                $("#loginForm").prepend(`
+      <div id="formError" class="alert alert-danger text-center">
+        البريد الإلكتروني أو كلمة المرور غير صحيحة
+      </div>
+    `);
+            }
+        }, 2000);
     });
 });

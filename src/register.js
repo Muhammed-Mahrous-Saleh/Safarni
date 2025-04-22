@@ -104,7 +104,33 @@ $(document).ready(function () {
         }
 
         if (isValid) {
-            alert("تم إنشاء الحساب بنجاح!");
+            const submitBtn = $("#registerForm button[type='submit']");
+
+            submitBtn
+                .prop("disabled", true)
+                .html(`<i class="fas fa-spinner fa-spin"></i>`);
+
+            setTimeout(() => {
+                submitBtn.prop("disabled", false).html("إنشاء الحساب");
+
+                const successModal = $(`
+                    <div id="successMessage" class="alert alert-success text-center position-fixed top-0 translate-middle-x mt-3 shadow" style="z-index: 1050; width: fit-content; padding: 1rem 2rem;">
+                      <i class="fas fa-check-circle me-2"></i>&nbsp;تم&nbsp;إنشاء&nbsp;الحساب&nbsp;بنجاح&nbsp;🎉
+                    </div>
+                  `);
+
+                $("body").append(successModal);
+
+                setTimeout(() => {
+                    successModal.fadeOut(500, function () {
+                        $(this).remove();
+                    });
+                }, 2000);
+            }, 2000);
+
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 5000);
         }
     });
 
@@ -118,7 +144,11 @@ $(document).ready(function () {
 
     function showError(input, message) {
         input.addClass("is-invalid");
-        input.siblings(".invalid-feedback").text(message).show();
+        if (input.attr("id").toLowerCase().includes("password")) {
+            input.parent().siblings(".invalid-feedback").text(message).show();
+        } else {
+            input.siblings(".invalid-feedback").text(message).show();
+        }
     }
 
     function showSuccess(input) {
