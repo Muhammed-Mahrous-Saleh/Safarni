@@ -1,0 +1,49 @@
+@use "../abstracts/variables";
+
+.services {
+    background-color: variables.$color-gray-300;
+
+    &_card {
+        background-color: inherit;
+        border: none;
+        transition: all 0.5s ease;
+        max-width: 540px;
+
+        @media screen and (max-width: 767px) {
+            padding-block: 1rem;
+        }
+
+        &--icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: variables.$color-main;
+            font-size: 4rem;
+
+            @media screen and (max-width: 767px) {
+                height: auto;
+            }
+        }
+
+        &--text-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: start;
+            height: 100%;
+            color: variables.$color-main-dark;
+
+            @media screen and (max-width: 767px) {
+                text-align: center;
+                height: auto;
+            }
+        }
+
+        &:hover {
+            background-color: variables.$color-gray-200;
+            transform: translateY(-10px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+    }
+}

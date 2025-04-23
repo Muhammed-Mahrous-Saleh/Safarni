@@ -1,0 +1,11 @@
+.registerPage {
+    &__main {
+        min-height: calc(100vh - 80px);
+        margin-inline: auto;
+    }
+
+    &__form {
+        width: 80%;
+        max-width: 500px;
+    }
+}

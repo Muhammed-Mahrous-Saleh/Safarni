@@ -1,0 +1,42 @@
+@use "../abstracts/variables";
+
+.about-trip.trip2-page h2 {
+    color: variables.$color-secondary;
+}
+
+.trip2-page {
+    .places-container {
+        .place-container {
+            position: relative;
+            padding-block: 1.5rem;
+
+            &:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60%;
+                height: 2px;
+                background-color: variables.$color-gray-300;
+            }
+
+            .place-icon {
+                font-size: 2rem;
+                color: rgba(variables.$color-secondary, 0.6);
+                text-align: left;
+            }
+
+            .place-title {
+                font-size: 2rem;
+                color: variables.$color-secondary-dark;
+                text-align: center;
+            }
+
+            .place-info {
+                font-size: 1.3rem;
+                color: rgba(variables.$color-secondary-dark, 0.8);
+            }
+        }
+    }
+}

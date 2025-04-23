@@ -1,0 +1,67 @@
+@use "../abstracts/variables";
+
+.loginForm {
+    &__group {
+        position: relative;
+        display: flow-root;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__input {
+        border: none !important;
+        border-bottom: 2px solid variables.$color-gray-300 !important;
+        transition: all 0.3s, margin-top 0s;
+        text-align: right;
+        padding-right: calc(1.5em + 0.75rem);
+        margin-bottom: 2px;
+        margin-top: 1.3125rem;
+
+        &:focus {
+            border: none !important;
+            border-bottom: 2px solid variables.$color-main !important;
+            box-shadow: none !important;
+            margin-bottom: 0;
+        }
+
+        &.is-invalid {
+            border-color: red !important;
+        }
+
+        &::-webkit-input-placeholder {
+            color: rgba(variables.$color-main-dark, 0.8);
+        }
+    }
+
+    &__label {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-right: calc(1.5em + 0.75rem);
+        margin-top: 0.7rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        transition: all 0.3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-2.5rem);
+    }
+
+    &__forget-pass {
+        transition: all 0.3s;
+        color: variables.$color-gray-600;
+
+        &:hover {
+            color: variables.$color-secondary-light;
+        }
+    }
+}
+
+.toggle-input {
+    top: 20px;
+    left: 10px;
+}

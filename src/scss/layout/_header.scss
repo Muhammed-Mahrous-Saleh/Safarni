@@ -1,0 +1,78 @@
+@use "../abstracts/variables";
+
+header {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    text-align: center;
+
+    &.main-page {
+        background-image: url("../images/home-bg.jpg");
+    }
+
+    &.trip1-page {
+        background-image: url("../images/trip1-1.jpg");
+
+        .site-heading {
+            color: variables.$color-main-light;
+
+            h1 {
+                font-size: 4rem;
+                margin-bottom: 2rem;
+            }
+
+            .subheading {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &.trip2-page {
+        background-image: url("../images/trip2.jpg");
+
+        .site-heading {
+            color: variables.$color-secondary-light;
+
+            h1 {
+                font-size: 4rem;
+                margin-bottom: 2rem;
+            }
+
+            .subheading {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .heading-container {
+        top: 50%;
+        transform: translateY(-50%);
+        color: variables.$color-white;
+        z-index: 1;
+    }
+
+    .site-heading {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        color: variables.$color-main-light;
+
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .subheading {
+            font-size: 2rem;
+        }
+    }
+}

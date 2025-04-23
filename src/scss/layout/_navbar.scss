@@ -1,0 +1,118 @@
+@use "../abstracts/variables";
+
+.navbar {
+    &_brand:hover {
+        color: variables.$color-main !important;
+        cursor: pointer;
+    }
+
+    .logo-container {
+        width: 30px;
+        height: 30px;
+
+        .svg-logo-icon {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color: currentColor;
+            mask-image: url(../images/logo.svg);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+        }
+    }
+}
+
+#mainNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    border-bottom: 1px solid variables.$color-gray-300;
+    background-color: variables.$color-white;
+    font-family: variables.$font-secondary;
+
+    .navbar-brand {
+        font-weight: 800;
+    }
+
+    .navbar-toggler {
+        font-size: 0.75rem;
+        font-weight: 800;
+        padding: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    .navbar-nav > li.nav-item > a.nav-link {
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.0625em;
+        text-transform: uppercase;
+        color: variables.$color-secondary;
+
+        &:focus,
+        &:hover {
+            color: variables.$color-main;
+        }
+    }
+
+    @media (min-width: 992px) {
+        border-bottom: 1px solid transparent;
+        background: transparent;
+
+        .navbar-brand {
+            color: variables.$color-white;
+
+            &:focus,
+            &:hover {
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        .navbar-nav > li.nav-item > a.nav-link {
+            color: variables.$color-white;
+
+            &:focus,
+            &:hover {
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        transition: background-color 0.2s;
+        transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        &.is-fixed {
+            position: fixed;
+            top: -83px;
+            transition: transform 0.2s;
+            border-bottom: 1px solid variables.$color-white;
+            background-color: rgba(255, 255, 255, 0.9);
+
+            .navbar-brand {
+                color: #212529;
+
+                &:focus,
+                &:hover {
+                    color: variables.$color-main;
+                }
+            }
+
+            .navbar-nav > li.nav-item > a {
+                color: #212529;
+
+                &:focus,
+                &:hover {
+                    color: variables.$color-main;
+                }
+            }
+        }
+
+        &.is-visible {
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+}

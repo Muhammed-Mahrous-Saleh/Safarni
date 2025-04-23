@@ -1,0 +1,23 @@
+@use "../abstracts/variables";
+
+.about {
+    background-color: variables.$color-main-dark;
+    position: relative;
+    color: variables.$color-secondary-light;
+    font-weight: 600;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+}

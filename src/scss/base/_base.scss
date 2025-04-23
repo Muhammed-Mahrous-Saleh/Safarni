@@ -1,0 +1,32 @@
+@use "../abstracts/variables";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: variables.$font-main;
+    color: variables.$color-secondary;
+    background-color: variables.$color-white;
+}
+
+.invalid-feedback {
+    display: none;
+    margin: 0 !important;
+
+    &.show {
+        display: block;
+    }
+}
+
+.invalid-feedback.show + .loginForm__input,
+.invalid-feedback.show + div > .loginForm__input {
+    margin-top: 0;
+}
+
+.toggle-input {
+    top: 20px;
+    left: 10px;
+}

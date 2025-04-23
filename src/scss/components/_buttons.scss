@@ -1,0 +1,58 @@
+@use "../abstracts/variables";
+
+.btn.btn-custom {
+    &,
+    &:link,
+    &:visited {
+        background-color: variables.$color-main;
+        border-color: variables.$color-main;
+    }
+
+    &:focus,
+    &:focus-visible {
+        background-color: variables.$color-main;
+        border-color: variables.$color-main;
+        box-shadow: none;
+    }
+
+    &:active {
+        background-color: variables.$color-main-dark !important;
+        border-color: variables.$color-main-dark !important;
+        color: variables.$color-main-light !important;
+    }
+
+    &:hover {
+        background-color: variables.$color-main-light;
+        border-color: variables.$color-main-light;
+        color: variables.$color-main-dark;
+    }
+}
+
+.login {
+    align-self: center;
+
+    &_btn {
+        background-color: variables.$color-main !important;
+        border-color: variables.$color-main !important;
+        font-size: 0.75rem !important;
+
+        &:focus,
+        &:focus-visible {
+            background-color: variables.$color-main !important;
+            border-color: variables.$color-main !important;
+            box-shadow: none !important;
+        }
+
+        &:active {
+            background-color: variables.$color-main-dark !important;
+            border-color: variables.$color-main-dark !important;
+            color: variables.$color-main-light !important;
+        }
+
+        &:hover {
+            background-color: variables.$color-main-light !important;
+            border-color: variables.$color-main-light !important;
+            color: variables.$color-main-dark !important;
+        }
+    }
+}

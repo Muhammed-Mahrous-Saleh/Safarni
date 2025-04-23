@@ -1,0 +1,24 @@
+@use "../abstracts/variables";
+
+.about-trip {
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    &.trip1-page {
+        h2 {
+            color: variables.$color-main;
+        }
+    }
+
+    .scroll-btn {
+        z-index: 10;
+    }
+
+    .gallery-container {
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        direction: rtl;
+    }
+}

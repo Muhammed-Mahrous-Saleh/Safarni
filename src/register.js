@@ -145,9 +145,18 @@ $(document).ready(function () {
     function showError(input, message) {
         input.addClass("is-invalid");
         if (input.attr("id").toLowerCase().includes("password")) {
-            input.parent().siblings(".invalid-feedback").text(message).show();
+            input
+                .parent()
+                .siblings(".invalid-feedback")
+                .addClass("show")
+                .text(message)
+                .show();
         } else {
-            input.siblings(".invalid-feedback").text(message).show();
+            input
+                .siblings(".invalid-feedback")
+                .addClass("show")
+                .text(message)
+                .show();
         }
     }
 

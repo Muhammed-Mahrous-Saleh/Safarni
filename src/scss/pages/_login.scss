@@ -1,0 +1,9 @@
+.loginPage {
+    &__main {
+        min-height: calc(100vh - 80px);
+    }
+
+    &__form {
+        max-width: 400px;
+    }
+}
